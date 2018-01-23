@@ -19,5 +19,6 @@
         "psr-4": {
             "Sayful\\SlimFlash\\": "src"
         }
-    }
+    },
+    "minimum-stability": "stable"
 }
