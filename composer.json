@@ -1,24 +1,33 @@
 {
-    "name": "sayful1/slim-flash",
-    "type": "library",
-    "description": "Easy flash notifications using sweetAlert for Slim Framework 3",
-    "keywords": ["slim","framework","provider","flash","message"],
-    "homepage": "http://slimframework.com",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Sayful Islam",
-            "email": "sayful.islam001@gmail.com",
-            "homepage": "https://sayfulislam.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.5.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Sayful\\SlimFlash\\": "src"
-        }
-    },
-    "minimum-stability": "stable"
+  "name": "sayful1/slim-flash",
+  "type": "library",
+  "description": "Easy flash notifications using sweetAlert for Slim Framework 3",
+  "keywords": [
+    "slim",
+    "framework",
+    "provider",
+    "flash",
+    "message"
+  ],
+  "homepage": "http://slimframework.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sayful Islam",
+      "email": "sayful.islam001@gmail.com",
+      "homepage": "https://sayfulislam.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sayful\\SlimFlash\\": "src"
+    }
+  },
+  "minimum-stability": "stable"
 }

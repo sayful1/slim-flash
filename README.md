@@ -64,10 +64,10 @@ Behind the scenes, this will set a few keys in the session:
 
 Add flash as global variable to Twig-View. For Twig-View, see documentation on [Slim Framework Twig View](https://github.com/slimphp/Twig-View)
 ```php
-$container['view'] = function ($c) {
+$container['view'] = function ($container) {
     ...
     // Add flash as global variable to twig view
-    $view->getEnvironment()->addGlobal( 'flash', $c->flash );
+    $view->getEnvironment()->addGlobal( 'flash', $container->flash );
     ...
 };
 ```
@@ -101,16 +101,15 @@ With this message flashed to the session, you may now display it in your view(s)
 You can also implement this package with [Bootstrap](http://getbootstrap.com/)
 ```twig
 {% if flash.getFlashMessage() %}
-    {% set type = ('error' == flash.getFlashMessage.label) ? "danger" : flash.getFlashMessage.label %}
     {% if flash.getFlashMessage.message %}
-        <div class="alert alert-dismissible alert-{{ type }}" role="alert">
+        <div class="alert alert-dismissible alert-{{ flash.getFlashMessage.label }}" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             <h4 class="alert-heading">{{ flash.getFlashMessage.title }}</h4>
             <p>{{ flash.getFlashMessage.message }}</p>
         </div>
     {% else %}
-        <div class="alert alert-dismissible alert-{{ type }}" role="alert">
+        <div class="alert alert-dismissible alert-{{ flash.getFlashMessage.label }}" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             {{ flash.getFlashMessage.title }}
